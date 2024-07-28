@@ -1,0 +1,88 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyPSAB05UK3Xx6aXXdyeP7Mm",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/Srikanth2719/Codsoft/blob/main/CHATBOT_WITH_RULE_BASED_RESPONSES.ipynb\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "def chatbot():\n",
+        "    while True:\n",
+        "        user_input = input(\"you:\").lower()  # get user input\n",
+        "        intent = recognize_intent(user_input)  # recognize intent\n",
+        "        response = get_response(intent)  # Get predefined response\n",
+        "        print(f\"Chatbot:{response}\")\n",
+        "\n",
+        "\n",
+        "def recognize_intent(user_input):\n",
+        "    # Implement your pattern matching logic here\n",
+        "    # Example: Check if user_input contains specific keywords\n",
+        "    if \"hello\" in user_input:\n",
+        "        return \"greeting\"\n",
+        "    elif \"weather\" in user_input:  # fixed indentation here\n",
+        "        return \"weather_inquiry\"\n",
+        "    else:  # fixed indentation here\n",
+        "        return \"unknown\"  # aligned with 'if' and 'elif'\n",
+        "\n",
+        "\n",
+        "def get_response(intent):  # Fixed typo in function name\n",
+        "    # Define predefined responses for each intent\n",
+        "    if intent == \"greeting\":  # fixed comparison operator\n",
+        "        return \"Hello! How can I assist you today?\"  # fixed indentation and return statement\n",
+        "    elif intent == \"weather_inquiry\":  # fixed comparison operator\n",
+        "        return \"The Weather today is sunny.\"  # fixed indentation and return statement\n",
+        "    else:\n",
+        "        return \"I'm sorry. I didn't understand that.\"  # fixed indentation and return statement\n",
+        "\n",
+        "\n",
+        "if __name__ == \"__main__\":  # fixed comparison operator and variable name\n",
+        "    chatbot()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "RqRuPDfo_w-m",
+        "outputId": "1c9c4c2c-33fd-4228-f428-bdfc335198f6"
+      },
+      "execution_count": null,
+      "outputs": [
+        {
+          "metadata": {
+            "tags": null
+          },
+          "name": "stdout",
+          "output_type": "stream",
+          "text": [
+            "Chatbot:Hello! How can I assist you today?\n",
+            "Chatbot:The Weather today is sunny.\n",
+            "Chatbot:I'm sorry. I didn't understand that.\n"
+          ]
+        }
+      ]
+    }
+  ]
+}
